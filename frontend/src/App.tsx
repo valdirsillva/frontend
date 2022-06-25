@@ -1,8 +1,8 @@
+import { Header } from "./Header/header";
+
 function App() {
   return (
-    <div className="App">
-      Ola mundo
-    </div>
+    <Header />
   );
 }
 

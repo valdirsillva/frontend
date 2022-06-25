@@ -1,0 +1,74 @@
+.flexContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.flexHeaderTop {
+    display: flex;
+    position: absolute;
+
+    width: 100%;
+    height: 375px;
+    background-image: url(/public/images/topo.png);
+
+    background-position: 270% 0;
+    background-attachment: scroll;
+    background-repeat: repeat;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+.textLeft {
+    position: absolute;
+    display: inline;
+    float: right;
+    left: 735px;
+
+    top: 30px;
+}
+
+.textLeft h3 {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+}
+
+.textLeft span {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: right;
+    position: absolute;
+    top: 81px;
+
+    color: #676666;
+}
+
+.inputSearch {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+}
+
+.content {
+    margin-top: 21%;
+}
+
+.content input {
+    width: 540px;
+    height: 50px;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+
+    padding-left: 3rem;
+    font-size: 0.985rem;
+}
+
+.content>span {
+    margin-left: 1rem;
+    position: absolute !important;
+    margin-top: 0.875rem;
+    font-size: 1.75rem;
+    color: red
+}
