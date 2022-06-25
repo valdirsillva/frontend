@@ -1,0 +1,81 @@
+.panel,
+.panelContent>.itemImage {
+    display: flex;
+}
+
+.panel {
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    gap: 10px;
+}
+
+.panelTitle {
+    margin-top: 60px;
+}
+
+.panelTitle,
+.panelContent {
+    width: 730px;
+}
+
+.panelTitle>h3 {
+    color: #333;
+    height: 34px;
+    left: 355px;
+}
+
+.panelContent {
+    display: flex;
+    justify-content: center;
+    top: 30px;
+
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.panelContent>.itemImage {
+    min-width: 350px;
+    height: 170px;
+    flex: 1;
+}
+
+.overlay {
+    position: relative;
+    height: 170px;
+    flex: 1;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.6);
+    gap: 10px;
+}
+
+.overlay,
+.itemImage>a>img {
+    border-radius: 8px;
+}
+
+.itemImage>a>span {
+    position: relative;
+    bottom: 30px;
+    left: 10px;
+
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    font-family: Poppins, sans-serif;
+    color: white;
+}
+
+.itemImage>a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.itemImage>a>img {
+    position: relative;
+    width: 350px;
+    height: 170px;
+    z-index: -1;
+}
