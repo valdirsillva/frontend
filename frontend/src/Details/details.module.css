@@ -1,0 +1,123 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.contentInfo {
+    width: 100%;
+    height: 187px;
+
+    background-image: url('/public/images/header.png');
+    background-repeat: repeat-x;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+.contentInfo>img {
+    position: absolute;
+    width: 119px;
+    height: 119px;
+    left: 451px;
+    top: 40px;
+
+    border-radius: 50%;
+}
+
+.info {
+    position: absolute;
+    width: 398px;
+    height: 45px;
+    left: 593px;
+    top: 54px;
+    color: #fff;
+}
+
+.info>h3 {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 140px;
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+
+    flex-direction: column;
+}
+
+.description>h1,
+.description>div,
+.price {
+    position: static;
+    width: 539px;
+}
+
+.description>div {
+    height: 66px;
+    top: 23px;
+    margin: 3px 0;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 33px;
+
+    color: #676666;
+}
+
+.description>h1 {
+    height: 20px;
+    left: 0;
+    top: 0;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 3px 0;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 140%;
+    color: #333;
+}
+
+.priceBorder {
+    height: 24px;
+    margin: 10px 0;
+    /* padding-bottom: 2px; */
+    border-bottom: 1px solid #ccc;
+}
+
+.price>h2 {
+    width: 315px;
+    height: 20px;
+
+    top: 109px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 140%;
+    color: #333;
+}
+
+
+.price span {
+    width: 315px;
+    height: 24px;
+    top: 133px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333;
+}
