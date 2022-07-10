@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './details.module.css'
 
 export function Details() {
@@ -5,8 +6,12 @@ export function Details() {
         <div className={styles.container}>
             <div className={styles.contentInfo}>
                 <div className={styles.info}>
-                    <h3></h3>
-                    <span></span>
+                    <h3>Mamma Mia</h3>
+                    <main>
+                        <Link to="/" className={styles.link}>
+                            Voltar
+                        </Link>
+                    </main>
                 </div>
             </div>
 
