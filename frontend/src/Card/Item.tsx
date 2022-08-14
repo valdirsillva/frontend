@@ -28,7 +28,6 @@ export default function Item() {
             {restaurants.map(restaurant => {
                 let img = `http://localhost:8888/images/`
 
-                console.log(restaurant)
                 return (
                     <div className={styles.overlay} key={restaurant.id}>
                         <div className={styles.itemImage}>
