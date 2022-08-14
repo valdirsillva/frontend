@@ -17,10 +17,13 @@ export default function Item() {
     const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
 
     useEffect(() => {
-        api.get<Restaurant[]>('restaurants').then(({ data }) => {
-            setRestaurants(data)
-        })
-
+        api.get<Restaurant[]>('restaurants')
+            .then(({ data }) => {
+                setRestaurants(data)
+            })
+            .catch(err => {
+                console.log(`Erro ao listar restaurantes. ${err.message}`)
+            })
     }, []);
 
     return (
@@ -31,7 +34,7 @@ export default function Item() {
                 return (
                     <div className={styles.overlay} key={restaurant.id}>
                         <div className={styles.itemImage}>
-                            <Link to="/details">
+                            <Link to={`/details?uuid=${restaurant.id}`}>
                                 <img src={`${img}${restaurant.image}`} alt="" />
                                 <span>{restaurant.name}</span>
                             </Link>
