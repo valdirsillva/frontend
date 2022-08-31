@@ -3,7 +3,6 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { api } from '../Services/api';
 import styles from './details.module.css'
 
-
 export function Details() {
 
     const Restaurant = {

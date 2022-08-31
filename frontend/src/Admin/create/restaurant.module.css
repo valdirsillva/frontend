@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    top: 100px;
+    /* position: absolute; */
+}
+
+.groupInput {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding: 20px 10px;
+}
+
+.groupInput input {
+    padding: 12px 16px;
+}

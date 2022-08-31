@@ -1,0 +1,37 @@
+body {
+    background-color: #dbd8d8;
+}
+
+.content {
+    display: flex;
+    height: 75px;
+    background-color: #ff5200;
+}
+
+.adminHeader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.navbarNav {
+    width: 60%;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.navbar li {
+    list-style: none;
+}
+
+.navbar li a {
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+}
