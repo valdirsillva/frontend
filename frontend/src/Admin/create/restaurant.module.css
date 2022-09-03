@@ -1,25 +1,65 @@
-.container {
+.container,
+form,
+.groupInput {
     display: flex;
+    justify-content: center;
+}
+
+.container {
+    flex-direction: column;
+    align-items: center;
+}
+
+.contentHeader {
+    width: 60%;
+    display: flex;
+
+    margin-bottom: 30px;
+}
+
+.contentHeader h1 {
+    font-size: 2rem;
 }
 
 form {
-    display: flex;
-    justify-content: center;
+
     flex-direction: column;
     align-items: center;
-
     width: 100%;
     top: 100px;
-    /* position: absolute; */
 }
 
 .groupInput {
-    display: flex;
     flex-direction: column;
     width: 60%;
-    padding: 20px 10px;
+}
+
+.groupInput label {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: #333;
 }
 
 .groupInput input {
+    font-size: 1rem;
+    font-weight: 600;
+    height: 60px;
+    border-radius: 8px;
+    border: 2px solid #d0d0d0;
+    margin: .75rem 0;
+    padding: 0 1.5rem;
+}
+
+.buttonAdd {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333;
+    width: 250px;
+    height: 60px;
+    border: 0;
+    border-radius: 8px;
+    background: #ff5200;
     padding: 12px 16px;
+    margin-top: 25px;
 }
