@@ -1,39 +1,75 @@
-import { FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 import Header from '../header/header'
 import style from '../create/restaurant.module.css'
+
 import { api } from '../../Services/api'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css';
 
 export default function Restaurant() {
     const [name, setName] = useState('')
     const [price, setPrice] = useState('')
-    const [image, setImage] = useState('')
+    const [image, setImage] = useState<File | string>('')
     const [description, setDesctiption] = useState('')
     const [opening_hours, setOpennigHours] = useState('')
     const [payment_method, setPaymentMethod] = useState('')
 
-    function handleCreateRestaurant(e: FormEvent) {
-        e.preventDefault()
+    // Quando uma imagem for selecionada
+    function onChangeSelectedImage(event: ChangeEvent<HTMLInputElement>) {
+        if (!event.target.files) return;
 
-        api.post('restaurant', {
-            name, price, description, opening_hours, payment_method, image
-        })
-            .then(function (response) {
-                console.log(response)
-            }).catch(function (error) {
-                console.log(error)
-            })
+        const restaurantImage = event.target.files[0]
+
+        setImage(restaurantImage)
     }
 
+    async function handleCreateRestaurant(event: FormEvent) {
+        event.preventDefault()
+
+        let data = new FormData()
+
+        data.append('image', image)
+        data.append('name', String(name))
+        data.append('price', String(price))
+        data.append('description', String(description))
+        data.append('opening_hours', String(opening_hours))
+        data.append('payment_method', String(payment_method))
+
+        await api.post('restaurant', data)
+            .then(response => {
+                // Limpa campos do formulário
+                reset()
+
+                console.log("Restaurante cadastrado ", response.status)
+            })
+            .catch(error => console.log(error))
+    }
+
+    function reset() {
+        setName('')
+        setImage('')
+        setDesctiption('')
+        setOpennigHours('')
+        setPaymentMethod('')
+        setPrice('')
+    }
+
+    function handleClickButton() {
+        toast.success('Restaurante cadastrado com sucesso !')
+    }
 
     return (
         <>
             <Header />
 
+            <ToastContainer />
+
             <div className={style.container}>
                 <div className={style.contentHeader}>
                     <h1>Novo Restaurante</h1>
+
                 </div>
-                <form className={style.form} onSubmit={(e) => handleCreateRestaurant(e)}>
+                <form className={style.form} method="post" onSubmit={(e) => handleCreateRestaurant(e)} encType="multipart/form-data">
                     <div className={style.groupInput}>
                         <label >Nome do restaurante</label>
                         <input
@@ -57,7 +93,7 @@ export default function Restaurant() {
                     </div>
 
                     <div className={style.groupInput}>
-                        <label>Preço</label>
+                        <label>Faixa de Preço </label>
                         <input
                             type="text"
                             name="price"
@@ -94,13 +130,18 @@ export default function Restaurant() {
                         <input
                             type="file"
                             name="image"
-                            value={image}
-                            onChange={e => setImage(e.target.value)}
+                            onChange={onChangeSelectedImage}
                         />
                     </div>
 
                     <div className={style.groupInput}>
-                        <button type="submit" name="salvar" className={style.buttonAdd}>Salvar</button>
+                        <button
+                            type="submit"
+                            name="salvar"
+                            onClick={handleClickButton}
+                            className={style.buttonAdd}
+                        >Salvar
+                        </button>
                     </div>
                 </form>
             </div>
